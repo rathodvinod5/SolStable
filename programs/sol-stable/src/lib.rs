@@ -1,10 +1,13 @@
 use anchor_lang::prelude::*;
 
 pub mod instructions;
-use instructions::*;
+pub use instructions::*;
 
 pub mod state;
-use state::*;
+pub use state::*;
+
+pub mod utils;
+pub use utils::*;
 
 declare_id!("6sntG2TygfQFj1s9Sh4MpqPf4SWFGiuipE867tzt4wez");
 
