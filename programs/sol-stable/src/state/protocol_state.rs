@@ -58,7 +58,7 @@ pub struct ProtocolState {
 
 impl ProtocolState {
     /// Account size including Anchor discriminator.
-    pub const length: usize = 8 + Self::INIT_SPACE;
+    pub const LENGTH: usize = 8 + Self::INIT_SPACE;
 
     /// Returns true if the protocol is currently paused.
     pub fn is_paused(&self) -> bool {
