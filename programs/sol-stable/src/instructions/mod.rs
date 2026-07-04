@@ -1,17 +1,34 @@
-pub use initialize_protocol::*;
-pub mod initialize_protocol;
+//! Central module for all instruction handlers.
+//!
+//! Instructions are grouped by feature instead of keeping every
+//! instruction in a single directory. As the protocol grows this
+//! makes navigation much easier.
+//!
+//! Phase 1
+//! --------
+//! admin/
+//!     initialize_protocol
+//!
+//! vault/
+//!     create_vault
+//!     deposit_collateral
+//!     withdraw_collateral
+//!
+//! stablecoin/
+//!     mint_stablecoin
+//!     burn_stablecoin
+//!
+//! Future
+//! ------
+//! liquidation/
+//! governance/
+//! oracle/
 
-pub use deposit_collateral::*;
-pub mod deposit_collateral;
+pub mod admin;
+pub mod stablecoin;
+pub mod vault;
 
-pub use mint_stablecoin::*;
-pub mod mint_stablecoin;
-
-pub use create_vault::*;
-pub mod create_vault;
-
-pub use burn_stablecoin::*;
-pub mod burn_stablecoin;
-
-pub use withdraw_collateral::*;
-pub mod withdraw_collateral;
+// Re-export instruction handlers.
+pub use admin::*;
+pub use stablecoin::*;
+pub use vault::*;
